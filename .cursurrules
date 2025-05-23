@@ -1,0 +1,54 @@
+ignore_dirs:
+  - .git
+  - .dart_tool
+  - build
+  - ios/Pods
+  - .idea
+  - .vscode
+  - .flutter-plugins
+  - .flutter-plugins-dependencies
+  - .packages
+  - .pub-cache
+  - .pub
+  - generated_plugin_registrant.dart
+
+ignore_files:
+  - "*.g.dart"
+  - "*.freezed.dart"
+  - "*.mocks.dart"
+  - "*.config.dart"
+  - "*.gr.dart"
+  - "*.gen.dart"
+  - pubspec.lock
+  - .metadata
+  - .flutter-plugins
+  - .flutter-plugins-dependencies
+  - .packages 
+
+# Component Guidelines
+
+## UI Components
+- All common UI widgets must be located in `lib/widgets/ui/` directory
+- Widgets must be written as StatelessWidget or StatefulWidget
+- File names must be in snake_case, class names in PascalCase
+- Complex widgets should be separated into sub-widgets for reusability
+- Basic UI style should be implemented based on minimal and modern Flat design like Toss app
+- Maintain spacing (padding), simple colors, smooth animations, clear typography, and actively utilize Material 3 system
+- Custom buttons, cards, section headers must be implemented based on internal common style guide
+
+## Icons
+- All icons must use the flutter_lucide package
+- Package installation: `flutter pub add flutter_lucide`
+- Icon import: `import 'package:flutter_lucide/flutter_lucide.dart'`
+- Example: `Icon(LucideIcons.search), Icon(LucideIcons.menu)`
+
+## Component Structure
+- Page-specific widgets must be located in the corresponding route directory under `lib/screens/`
+- Common logic should be organized in the `lib/components/` directory
+
+## Best Practices
+- Dart types must be explicitly specified
+- Widgets should be designed for reusability
+- When state is needed, separate into StatefulWidget and utilize setState or state management tools
+- Recommend using package-based absolute paths over relative paths for imports
+- Text styles, colors, spacing should maintain consistency through ThemeData, prioritizing styles set in global theme 
